@@ -1,4 +1,4 @@
-# Create a bucket for "init script"
+# Create a bucket for our dataproc cluster "init script"
 resource "google_storage_bucket" "dataproc_init_bucket" {
   name          = "${var.dproc_config}"
   storage_class = "NEARLINE"

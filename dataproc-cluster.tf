@@ -1,6 +1,6 @@
 #### Create a GCP cloud dataproc cluster: ###
 # Define our Cloud Dataproc cluster
-resource "google_dataproc_cluster" "vpc-sc-demo-cluster" {
+resource "google_dataproc_cluster" "demo-dataproc-cluster" {
   
   # Await key resources to be created: 
   depends_on = [

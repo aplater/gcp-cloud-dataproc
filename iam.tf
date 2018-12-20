@@ -12,17 +12,17 @@ resource "google_project_iam_member" "dataproc_worker_member" {
   member  = "serviceAccount:${google_service_account.dataproc-wkr-sa.email}"
 }
 
-# create the service account for our "Nest" nodes
-resource "google_service_account" "dataproc-nest-compute-sa" {
-  account_id   = "nest-compute-node"
-  display_name = "dataproc name node service account"
+# create the service account for our app compute nodes
+resource "google_service_account" "dataproc-app-compute-sa" {
+  account_id   = "app-compute-node"
+  display_name = "dataproc app compute node service account"
 }
 
 # Apply appropriate cloud storage role to service account
-resource "google_project_iam_member" "dataproc_nest_compute_member" {
+resource "google_project_iam_member" "dataproc_app_compute_member" {
   project = "${var.project}"
-  count   = "${length(var.nest_compute_roles)}"
-  role    = "${element(var.nest_compute_roles, count.index)}"
+  count   = "${length(var.app_compute_roles)}"
+  role    = "${element(var.app_compute_roles, count.index)}"
   #TODO Clean up the roles ^^
-  member = "serviceAccount:${google_service_account.dataproc-nest-compute-sa.email}"
+  member = "serviceAccount:${google_service_account.dataproc-app-compute-sa.email}"
 }
