@@ -52,6 +52,7 @@ variable "network_regions" {
     "1" = "us-west2"
     "2" = "us-central1"
     "3" = "us-east1"
+
     # "4" = "us-east4" Quota is 5 networks globally (default + 4)
   }
 }
@@ -64,6 +65,7 @@ variable "network_cidrs" {
     "1" = "10.50.1.0/28"
     "2" = "10.60.2.0/28"
     "3" = "10.70.3.0/28"
+
     # "4" = "10.80.4.0/28" Quota is 5 networks globally (default + 4)
   }
 }

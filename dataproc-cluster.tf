@@ -1,7 +1,6 @@
 #### Create a GCP cloud dataproc cluster: ###
 # Define our Cloud Dataproc cluster
 resource "google_dataproc_cluster" "demo-dataproc-cluster" {
-  
   # Await key resources to be created: 
   depends_on = [
     "google_service_account.dataproc-wkr-sa",
@@ -14,7 +13,7 @@ resource "google_dataproc_cluster" "demo-dataproc-cluster" {
 
   count = "${length(var.network_regions)}"
 
-  name  = "dp-cluster-${lookup(var.network_regions, count.index)}-net"
+  name   = "dp-cluster-${lookup(var.network_regions, count.index)}-net"
   region = "${lookup(var.network_regions, count.index)}"
 
   cluster_config {
@@ -44,29 +43,29 @@ resource "google_dataproc_cluster" "demo-dataproc-cluster" {
 
     # Override or set some custom properties
     software_config {
-
       image_version = "${var.image_version}"
+
       override_properties = {
         "dataproc:dataproc.allow.zero.workers" = "true"
       }
-
     }
 
     gce_cluster_config {
-
       subnetwork      = "dp-${lookup(var.network_regions, count.index)}-net"
       service_account = "${google_service_account.dataproc-wkr-sa.email}"
+
       # TODO ^^ Get specified service account working
 
       service_account_scopes = [
         "https://www.googleapis.com/auth/cloud-platform",
       ]
-      #TODO Clean up the scopes ^^
 
+      #TODO Clean up the scopes ^^
     }
 
     initialization_action {
       script = "gs://${google_storage_bucket.dataproc_init_bucket.name}/${google_storage_bucket_object.dataproc_init_script.name}"
+
       # ^^ Cluster init script
       # define-dproc-cluster.sh
 

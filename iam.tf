@@ -23,6 +23,7 @@ resource "google_project_iam_member" "dataproc_app_compute_member" {
   project = "${var.project}"
   count   = "${length(var.app_compute_roles)}"
   role    = "${element(var.app_compute_roles, count.index)}"
+
   #TODO Clean up the roles ^^
   member = "serviceAccount:${google_service_account.dataproc-app-compute-sa.email}"
 }
