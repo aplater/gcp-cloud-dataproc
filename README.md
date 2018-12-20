@@ -10,3 +10,10 @@ https://cloud.google.com/dataproc/
 - FaceBook Presto:    
 https://prestodb.io/
 
+to deploy:    
+
+1. gcloud init    
+1. clone this repo    
+1. CD to this repo   
+1. run "make"
+
