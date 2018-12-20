@@ -1,4 +1,12 @@
 # Cloud DataProc cluster
+
 Google Cloud DataProc cluster
-Hardened, HA cluster capable of running Hadoop jobs
+build a security hardened, HA cluster capable of running Hadoop jobs
+
+Leverage: 
+- Google Cloud Platform, Data Proc Cluster:    
+https://cloud.google.com/dataproc/
+
+- FaceBook Presto:    
+https://prestodb.io/
 
