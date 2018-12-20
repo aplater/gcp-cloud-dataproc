@@ -10,6 +10,9 @@ https://cloud.google.com/dataproc/
 - FaceBook Presto:    
 https://prestodb.io/
 
+- A full menu of dataproc initialization actions:     
+https://github.com/GoogleCloudPlatform/dataproc-initialization-actions     
+
 to deploy:    
 
 1. gcloud init    
