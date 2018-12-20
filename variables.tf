@@ -46,11 +46,11 @@ variable "app_compute_roles" {
 
 variable "network_regions" {
   type = "map"
-  description = "list of required netork regions"
+  description = "list of required network regions"
 }
 
 variable "network_cidrs" {
   type = "map"
-  description = "list of required netork cidrs"
+  description = "list of required network cidrs"
 }
 
