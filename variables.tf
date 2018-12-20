@@ -46,26 +46,11 @@ variable "app_compute_roles" {
 
 variable "network_regions" {
   type = "map"
-
-  default = {
-    "0" = "us-west1"
-    "1" = "us-west2"
-    "2" = "us-central1"
-    "3" = "us-east1"
-
-    # "4" = "us-east4" Quota is 5 networks globally (default + 4)
-  }
+  description = "list of required netork regions"
 }
 
 variable "network_cidrs" {
   type = "map"
-
-  default = {
-    "0" = "10.40.0.0/28"
-    "1" = "10.50.1.0/28"
-    "2" = "10.60.2.0/28"
-    "3" = "10.70.3.0/28"
-
-    # "4" = "10.80.4.0/28" Quota is 5 networks globally (default + 4)
-  }
+  description = "list of required netork cidrs"
 }
+
